@@ -18,7 +18,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_main)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        mainViewModel = ViewModelProvider(
+            this,
+            ViewModelProvider.AndroidViewModelFactory.getInstance(this.application)
+        ).get(MainViewModel::class.java)
 
         binding.user = mainViewModel.user
         /*binding.txtOne = "Hello World"
