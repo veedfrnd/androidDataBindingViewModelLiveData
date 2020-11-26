@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         ).get(MainViewModel::class.java)
 
         binding.user = mainViewModel.user
+        binding.mainViewModel = mainViewModel
         /*binding.txtOne = "Hello World"
         binding.txtTwo = "Hello World Two"*/
     }
